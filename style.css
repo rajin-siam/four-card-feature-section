@@ -1,0 +1,183 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-size: 15px;
+    width: 100%;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+:root{
+    --ff-sans: 'Poppings', sans-serif;
+    --fw-light:200;
+    --fw-normal: 400;
+    --fw-bold: 600;
+    --fs-400: 0.9275rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.625rem;
+    --fs-900: 2.5rem; 
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+body{
+  margin: 0;
+  font-family: var(--ff-sans);
+}
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+.wrapper{
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.wrapper--narrow{
+  max-width: 550px;
+}
+
+
+header {
+  text-align: center;
+  margin-block: 6rem;
+    
+}
+.layout-grid{
+  display: flex;
+  gap: 2rem
+}
+.layout-grid > * {
+  flex: 1;
+}
+
+h1{
+  font-weight: var(--fw-light);
+  font-size: var(--fs-900);
+}
+
+h1 span{
+  font-weight: var(--fw-bold);
+}
+
+header > p{
+  font-size: var(--fs-500);
+}
+
+.card{
+  padding: 2rem;
+  background-color: var(--very-light-gray);
+  box-shadow: 0 1rem 1.5rem -0.5rem var(--grayish-blue);
+  border-radius: 0.5rem;
+  border-top: .325rem solid;
+}
+
+.card__title{
+  font-size: var(--fs-600);
+  margin:0;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card__img{
+  display: block;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+
+.border-teal{
+  border-color: var(--cyan);
+}
+.border-red{
+  border-color: var(--red);
+}
+.border-blue{
+  border-color: var(--blue);
+}
+.border-orange{
+  border-color: var(--orange);
+}
+
+
+/* Media query for devices with max width of 768px (mobile and small tablets) */
+@media (max-width: 768px) {
+  .layout-grid {
+    flex-direction: column; /* Stack the columns vertically */
+    gap: 1.5rem; /* Reduce the gap for smaller screens */
+  }
+
+  header {
+    margin-block: 4rem; /* Adjust spacing for better readability */
+  }
+
+  .wrapper {
+    padding-inline: 1rem; /* Add padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  header > p {
+    font-size: 1rem; /* Adjust paragraph font size */
+  }
+
+  .card {
+    padding: 1.5rem; /* Reduce card padding */
+  }
+
+  .card__img {
+    margin-top: 1.5rem; /* Adjust image spacing */
+  }
+}
